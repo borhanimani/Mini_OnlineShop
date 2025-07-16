@@ -1,13 +1,11 @@
 import Navbar from "@/components/navbar";
-import Filterbar from "@/components/fliterbar";
-import ProductList from "@/components/productlist";
+import ProductSection from "@/components/productsection";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Filterbar />
-      <ProductList />
+      <ProductSection />
     </>
   );
 }
