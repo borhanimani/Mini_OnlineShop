@@ -4,7 +4,8 @@ export function getCategoryList(list: ProductArray): string[] {
     let categories: string[] = [];
 
     list.forEach(item => {
-        if (!categories.includes(item.category.toLowerCase())) {
+        if (!(categories.includes(item.category))) {
+            console.log(categories.includes(item.category.toLowerCase()));
             categories.push(item.category);
         }
     });

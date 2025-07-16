@@ -1,14 +1,14 @@
 'use client'
 import Filterbar from "./fliterbar"
 import ProductList from "./productlist";
-import { Products } from "@/utils/project-types";
+import { Products, ProductArray } from "@/utils/project-types";
+import { filterList, getCategoryList } from "@/utils/list-functions";
 
 export default function ProductSection({ list }: Products) {
 
-
   return (
     <>
-      <Filterbar list={["aa", "bb"]} />
+      <Filterbar list={getCategoryList(list)} />
       <ProductList list={list} />
     </>
   );
