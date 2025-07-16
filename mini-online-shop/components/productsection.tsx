@@ -4,6 +4,8 @@ import ProductList from "./productlist";
 import { Products } from "@/utils/project-types";
 
 export default function ProductSection({ list }: Products) {
+
+
   return (
     <>
       <Filterbar list={["aa", "bb"]} />
