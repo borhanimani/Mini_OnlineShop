@@ -14,7 +14,7 @@ export default function ProductCard(props: Product) {
         component="img"
         alt={props.title}
         image="/static/images/cards/contemplative-reptile.jpg"
-        className='h-2/5'
+        className='h-2/5 bg-neutral-400'
       />
       <div className='h-3/5 flex flex-col justify-between'>
         <CardContent>
