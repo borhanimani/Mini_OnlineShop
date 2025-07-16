@@ -9,7 +9,7 @@ import { Product } from '@/utils/project-types';
 
 export default function ProductCard(props: Product) {
   return (
-    <Card className='w-3/11 ml-15 mr-5 mt-10 h-115 flex flex-col' sx={{boxShadow:'0 3px 6px rgba(0, 0, 0, 0.6)'}}>
+    <Card className='w-3/11 ml-15 mr-5 mt-10 mb-5 h-115 flex flex-col' sx={{boxShadow:'0 3px 6px rgba(0, 0, 0, 0.6)'}}>
       <CardMedia
         component="img"
         alt={props.title}
