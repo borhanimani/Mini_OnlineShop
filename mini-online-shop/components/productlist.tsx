@@ -6,7 +6,7 @@ import { log } from "console";
 
 export default function ProductList() {
   return (
-    <section>
+    <section className="flex flex-row border-1 h-auto flex-wrap">
       {
         productList.map(item => {
           return (
