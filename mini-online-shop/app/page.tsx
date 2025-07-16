@@ -4,10 +4,14 @@ import ProductList from "@/components/productlist";
 
 export default function Home() {
   return (
+<<<<<<< product-listing
     <>
       <Navbar />
       <Filterbar />
       <ProductList />
     </>
+=======
+    <></>
+>>>>>>> main
   );
 }
