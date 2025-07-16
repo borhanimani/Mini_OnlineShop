@@ -1,14 +1,13 @@
 import ProductCard from "./productcard";
-import { Product, productList } from "@/utils/project-types";
-import { log } from "console";
+import { Products } from "@/utils/project-types";
 
 
 
-export default function ProductList() {
+export default function ProductList({ list }: Products) {
   return (
     <section className="flex flex-row border-1 h-auto flex-wrap">
       {
-        productList.map(item => {
+        list.map(item => {
           return (
             <ProductCard
               key={item.id}
