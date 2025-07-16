@@ -5,7 +5,7 @@ import Select from '@mui/material/Select';
 
 export default function CategoryFilter() {
   return (
-    <FormControl className='w-2/8' variant="standard">
+    <FormControl className='w-3/10' variant="standard">
       <InputLabel id="demo-simple-select-standard-label">Category</InputLabel>
       <Select
         labelId="demo-simple-select-standard-label"
