@@ -27,7 +27,7 @@ export default function ProductCard(props: Product) {
         </CardContent>
         <CardActions className='flex flex-row justify-between m-5'>
           <div>price: {props.price}</div>
-          <Button variant="contained">Add to cart</Button>
+          <Button variant="contained" sx={{fontSize:16, textTransform:'none'}}>Add to cart</Button>
         </CardActions>
       </div>
     </Card>
