@@ -2,8 +2,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { Categories } from '@/utils/project-types';
 
-export default function CategoryFilter() {
+export default function CategoryFilter({ list }: Categories) {
   return (
     <FormControl className='w-3/10' variant="standard">
       <InputLabel id="demo-simple-select-standard-label">Category</InputLabel>
@@ -17,9 +18,13 @@ export default function CategoryFilter() {
         <MenuItem value="">
           <em>None</em>
         </MenuItem>
-        <MenuItem value={10}>Ten</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
+        {
+          list.map(item => {
+            return (
+              <MenuItem value={item}>{item}</MenuItem>
+            );
+          })
+        }
       </Select>
     </FormControl>
   );

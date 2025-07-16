@@ -20,6 +20,10 @@ export type Products = {
     list: Product[];
 }
 
+export type Categories = {
+    list: string[];
+}
+
 export const productList: Product[] = [
     { id: 1, title: 'Footbal Ball', description: '6 mini size blue/red', price: 12.33, category: 'Sport', image: "" },
     { id: 2, title: 'Sunglasses', description: 'UV sunglasses with golder frame', price: 34.50, category: 'Accessory', image: '' },

@@ -1,13 +1,13 @@
 'use client'
 import Filterbar from "./fliterbar"
 import ProductList from "./productlist";
-import { productList } from "@/utils/project-types";
+import { Products } from "@/utils/project-types";
 
-export default function ProductSection() {
+export default function ProductSection({ list }: Products) {
   return (
     <>
-      <Filterbar />
-      <ProductList list={productList} />
+      <Filterbar list={["aa", "bb"]} />
+      <ProductList list={list} />
     </>
   );
 }
