@@ -1,13 +1,13 @@
 import Navbar from "@/components/navbar";
-import Filterbar from "@/components/fliterbar";
-import ProductList from "@/components/productlist";
+import ProductSection from "@/components/productsection";
+import { productList } from "@/utils/project-types";
 
 export default function Home() {
+
   return (
     <>
       <Navbar />
-      <Filterbar />
-      <ProductList />
+      <ProductSection list={productList}/>
     </>
   );
 }
