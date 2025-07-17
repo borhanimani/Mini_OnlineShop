@@ -4,6 +4,7 @@ import ProductList from "./productlist";
 import { Products, ProductArray } from "@/utils/project-types";
 import { filterList, getCategoryList } from "@/utils/list-functions";
 import { useState } from "react";
+import { ClassNames } from "@emotion/react";
 
 export default function ProductSection({ list }: Products) {
 
