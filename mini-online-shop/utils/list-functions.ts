@@ -5,7 +5,6 @@ export function getCategoryList(list: ProductArray): string[] {
 
     list.forEach(item => {
         if (!(categories.includes(item.category))) {
-            console.log(categories.includes(item.category.toLowerCase()));
             categories.push(item.category);
         }
     });
@@ -36,14 +35,14 @@ export function filterList(list: ProductArray, category: string, searchText: str
 
 function filterListByCategory(list: ProductArray, category: string): ProductArray {
     const filteredList: ProductArray = list.filter(item => {
-        item.category === category;
+        return item.category.toLowerCase() === category.toLowerCase();
     });
     return filteredList;
 }
 
 function filterListBySearchText(list: ProductArray, searchText: string) {
     const filteredList: ProductArray = list.filter(item => {
-        item.title.includes(searchText);
+        return item.title.includes(searchText);
     });
     return filteredList;
 }
