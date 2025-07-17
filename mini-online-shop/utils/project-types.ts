@@ -20,11 +20,21 @@ export type Products = {
     list: Product[];
 }
 
+export type CategoryComponent = {
+    list: string[];
+    onCategoryChange: (value: string) => void;
+}
+
+export type SearchComponent = {
+    onSearchChange: (value: string) => void;
+}
+
 export type Filters = {
     list: string[];
     onCategoryChange: (value: string) => void;
     onSearchChange: (value: string) => void;
 }
+
 
 export type ProductArray = Product[];
 

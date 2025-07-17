@@ -6,7 +6,7 @@ export default function Filterbar({ list, onCategoryChange, onSearchChange }: Fi
   return (
     <section className="flex flex-row items-center mt-1 mx-15 gap-20 h-1/8">
       <Search />
-      <CategoryFilter list={list} />
+      <CategoryFilter list={list} onCategoryChange={onCategoryChange}/>
     </section>
   );
 }

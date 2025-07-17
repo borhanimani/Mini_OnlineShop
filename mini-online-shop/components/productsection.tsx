@@ -14,7 +14,7 @@ export default function ProductSection({ list }: Products) {
     setSearchText(text);
   }
 
-  const updateCategory = (text: string): void => {
+  const updateCategory = (text: string): void => {    
     setCategory(text);
   }
 
