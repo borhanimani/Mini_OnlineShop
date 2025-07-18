@@ -1,6 +1,7 @@
 'use client'
 
 import { useCartStore } from "@/store/useCartStore";
+import { getTotalPrice } from "@/utils/cart-functions";
 import { CartItemArray } from "@/utils/project-types";
 import { useEffect } from "react";
 
@@ -18,7 +19,7 @@ export default function CartList() {
   return (
     <>
       {list.length == 0 ? (
-        <p>No item selected yet.</p>
+        <p>No product added yet.</p>
       ) : (
         <section>
           <table>
@@ -44,7 +45,7 @@ export default function CartList() {
                         {item.quantity}
                         <button onClick={() => increaseItem(item.id)}>+</button>
                       </th>
-                      <th>{item.price}</th>
+                      <th>{item.price}$</th>
                       <th><button onClick={() => deletItem(item.id)}>delete</button></th>
                     </tr>
                   );
@@ -52,6 +53,10 @@ export default function CartList() {
               }
             </tbody>
           </table>
+          <div>
+            <div>Total Price:</div>
+            <div>{getTotalPrice(list)}$</div>
+          </div>
         </section>
       )
       }
