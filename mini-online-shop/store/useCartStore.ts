@@ -3,7 +3,7 @@ import { CartItem, CartStore } from "@/utils/project-types";
 
 export const useCartStore = create<CartStore>((set) => ({
     list: [],
-    
+
     addItem: (item: CartItem) => set((state) => {
         if (state.list.some(theItem => theItem.id == item.id)) {
             return {
@@ -22,16 +22,40 @@ export const useCartStore = create<CartStore>((set) => ({
         list: state.list.filter((item) => { return item.id != id })
     })),
 
-    increaseItem: (id: number) => set((state) => ({
-        list: state.list.map((item) =>
-            item.id == id ? { ...item, quantity: item.quantity + 1 } : item
-        )
-    })),
+    increaseItem: (id: number) => set((state) => {
+        const item: CartItem | undefined = state.list.find((theItem) => theItem.id == id);
 
-    decreaseItem: (id: number) => set((state) => ({
-        list: state.list.map((item) =>
-            item.id == id ? { ...item, quantity: item.quantity - 1 } : item
-        )
-    })),
+        if (item) {
+            if (item.quantity < 10) {
+                return {
+                    list: state.list.map((item) =>
+                        item.id == id ? { ...item, quantity: item.quantity + 1 } : item
+                    )
+                }
+            } else {
+                return state;
+            }
+        } else {
+            return state;
+        }
+    }),
+
+    decreaseItem: (id: number) => set((state) => {
+        const item: CartItem | undefined = state.list.find((theItem) => theItem.id == id);
+
+        if (item) {
+            if (item.quantity > 0) {
+                return {
+                    list: state.list.map((item) =>
+                        item.id == id ? { ...item, quantity: item.quantity - 1 } : item
+                    )
+                }
+            } else {
+                return state;
+            }
+        } else {
+            return state;
+        }
+    }),
 }))
 
