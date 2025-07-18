@@ -1,6 +1,7 @@
 'use client'
 
 import { useCartStore } from "@/store/useCartStore";
+import { useEffect } from "react";
 
 export default function CartCount() {
   const listLength: number = useCartStore((state) => state.list).length;

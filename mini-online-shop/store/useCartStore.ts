@@ -3,8 +3,8 @@ import { CartItem, CartStore } from "@/utils/project-types";
 
 export const useCartStore = create<CartStore>((set) => ({
     list: [],
+    
     addItem: (item: CartItem) => set((state) => {
-
         if (state.list.some(theItem => theItem.id == item.id)) {
             return {
                 list: state.list.map(theItem =>
