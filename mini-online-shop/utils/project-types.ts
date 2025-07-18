@@ -37,6 +37,16 @@ export type Filters = {
 
 export type ProductArray = Product[];
 
+export type CartItemArray = CartItem[];
+
+export type CartStore = {
+    list: CartItemArray;
+    increaseItem: (id: number) => void;
+    decreaseItem: (id: number) => void;
+    addItem: (item: CartItem) => void;
+    deleteItem: (id: number) => void;
+}
+
 export const productList: Product[] = [
     { id: 1, title: 'Footbal Ball', description: '6 mini size blue/red', price: 12.33, category: 'Sport', image: "" },
     { id: 4, title: 'Tennis', description: '6 mini size blue/red', price: 12.33, category: 'Sport', image: "" },
