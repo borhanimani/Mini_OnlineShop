@@ -9,7 +9,7 @@ export default function ProductList({ list }: Products) {
     flex flex-col justify-center flex-wrap w-14/15
     md:flex-row md:justify-start md:ml-10
     lg:ml-10
-    xl:ml-10">
+    xl:ml-20">
       {
         list.map(item => {
           return (
