@@ -3,7 +3,6 @@ import ProductSection from "@/components/productsection";
 import { productList } from "@/utils/project-types";
 
 export default function Home() {
-
   return (
     <>
       <Navbar />
