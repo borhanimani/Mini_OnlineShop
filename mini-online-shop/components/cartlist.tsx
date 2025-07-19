@@ -23,7 +23,7 @@ export default function CartList() {
         lg:text-3xl'>No product added yet.</p>
       ) : (
         <section className="flex flex-col justify-between w-full h-screen mt-20">
-          <table className="w-full mt-12 border-b-1 border-stone-400">
+          <table className="w-full mt-12 border-b-1 border-stone-300">
             <thead className="sticky top-24 z-10 h-full text-stone-100 bg-stone-500">
               <tr className=" border-1 h-20 bg-stone-500">
                 <th className="text-xs md:text-xl">Number</th>
