@@ -26,7 +26,7 @@ export default function CartList() {
         <p className='pt-80 flex justify-center text-2xl'>No product added yet.</p>
       ) : (
         <section className="flex flex-col justify-between w-full h-full mt-20">
-          <table className="w-full border-stone-300 border-b-1">
+          <table className="w-full border-stone-3git00 border-b-1">
             <thead className="sticky top-20 z-10 h-full text-stone-100 bg-stone-500">
               <tr className=" border-1 h-20 text-red bg-stone-500">
                 <th className="">Number</th>
