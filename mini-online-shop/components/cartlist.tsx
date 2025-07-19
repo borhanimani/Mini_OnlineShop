@@ -25,8 +25,8 @@ export default function CartList() {
       {list.length == 0 ? (
         <p className='pt-80 flex justify-center text-2xl'>No product added yet.</p>
       ) : (
-        <section className="flex flex-col justify-between w-full h-7/8 mt-20">
-          <table className="w-full border-2 mt-12">
+        <section className="flex flex-col justify-between w-full h-full mt-20">
+          <table className="w-full border-stone-300 border-b-1">
             <thead className="sticky top-20 z-10 h-full text-stone-100 bg-stone-500">
               <tr className=" border-1 h-20 text-red bg-stone-500">
                 <th className="">Number</th>
@@ -62,7 +62,7 @@ export default function CartList() {
               }
             </tbody>
           </table>
-          <div className="flex flex-row justify-between items-center px-15 py-7 font-bold text-2xl border-1 w-full bg-stone-500 text-stone-100 sticky top-0 bottom-0">
+          <div className="sticky bottom-0 flex flex-row justify-between items-center px-15 py-7 font-bold text-2xl border-1 w-full bg-stone-500 text-stone-100 ">
             <div >Total Price:</div>
             <div >{getTotalPrice(list)} $</div>
           </div>
