@@ -15,11 +15,7 @@ export default function CartList() {
   const deletItem = useCartStore((state) => state.deleteItem);
   const increaseItem = useCartStore((state) => state.increaseItem);
   const decreaseItem = useCartStore((state) => state.decreaseItem);
-
-  useEffect(() => {
-    console.log(list);
-
-  }, [list])
+  
   return (
     <>
       {list.length == 0 ? (
