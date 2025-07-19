@@ -6,10 +6,10 @@ import { Products } from "@/utils/project-types";
 export default function ProductList({ list }: Products) {
   return (
     <section className=" 
-    flex flex-col justify-center flex-wrap
+    flex flex-col justify-center flex-wrap w-14/15
     md:flex-row md:justify-start md:ml-10
     lg:ml-10
-    xl:ml-20">
+    xl:ml-10">
       {
         list.map(item => {
           return (
