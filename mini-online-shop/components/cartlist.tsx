@@ -7,8 +7,6 @@ import Button from '@mui/material/Button';
 import { useCartStore } from "@/store/useCartStore";
 import { getItemTotalPrice, getTotalPrice } from "@/utils/cart-functions";
 import { CartItemArray } from "@/utils/project-types";
-import { useEffect } from "react";
-
 
 export default function CartList() {
   const list: CartItemArray = useCartStore((state) => state.list);
@@ -16,25 +14,24 @@ export default function CartList() {
   const increaseItem = useCartStore((state) => state.increaseItem);
   const decreaseItem = useCartStore((state) => state.decreaseItem);
 
-  useEffect(() => {
-    console.log(list);
-
-  }, [list])
   return (
     <>
       {list.length == 0 ? (
-        <p className='pt-80 flex justify-center text-2xl'>No product added yet.</p>
+        <p className='
+        pt-80 flex justify-center text-xl
+        md:text-2xl
+        lg:text-3xl'>No product added yet.</p>
       ) : (
-        <section className="flex flex-col justify-between w-full h-full mt-20">
-          <table className="w-full border-stone-3git00 border-b-1">
-            <thead className="sticky top-20 z-10 h-full text-stone-100 bg-stone-500">
-              <tr className=" border-1 h-20 text-red bg-stone-500">
-                <th className="">Number</th>
-                <th className="">Title</th>
-                <th className="">Description</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th colSpan={2}>Total Price</th>
+        <section className="flex flex-col justify-between w-full h-screen mt-20">
+          <table className="w-full mt-12 border-b-1 border-stone-300">
+            <thead className="sticky top-24 z-10 h-full text-stone-100 bg-stone-500">
+              <tr className=" border-1 h-20 bg-stone-500">
+                <th className="text-xs md:text-xl">Number</th>
+                <th className="text-xs md:text-xl">Title</th>
+                <th className="text-xs md:text-xl">Description</th>
+                <th className="text-xs md:text-xl">Quantity</th>
+                <th className="text-xs md:text-xl">Price</th>
+                <th className="text-xs md:text-xl" colSpan={2}>Total Price</th>
               </tr>
             </thead>
             <tbody>
@@ -42,19 +39,19 @@ export default function CartList() {
                 list.map((item, index) => {
                   return (
                     <tr className={index % 2 == 0 ? "bg-white h-15 " : "bg-stone-300 h-15 "} key={item.id}>
-                      <th className="font-normal">{index + 1}</th>
-                      <th className="font-normal">{item.title}</th>
-                      <th className="font-normal">{item.description}</th>
-                      <th className="font-normal">
+                      <th className="font-normal text-xs md:text-lg">{index + 1}</th>
+                      <th className="font-normal text-xs md:text-lg">{item.title}</th>
+                      <th className="font-normal text-xs md:text-lg">{item.description}</th>
+                      <th className="font-normal text-xs md:text-lg">
                         <Button onClick={() => decreaseItem(item.id)} variant="contained"
                           sx={{ borderRadius: '50%', fontSize: '20px', minWidth: 'unset', padding: '12px', marginRight: '8px', width: '20px', height: '20px', backgroundColor: 'rgba(185, 0, 0, 1)' }}>-</Button>
                         {item.quantity}
                         <Button onClick={() => increaseItem(item.id)} variant="contained"
                           sx={{ borderRadius: '50%', fontSize: '20px', minWidth: 'unset', padding: '12px', marginLeft: '8px', width: '20px', height: '20px' }}>+</Button>
                       </th>
-                      <th className="font-normal">{item.price} $</th>
-                      <th className="font-normal">{getItemTotalPrice(item)} $</th>
-                      <th className="font-normal">
+                      <th className="font-normal text-xs md:text-lg">{item.price} $</th>
+                      <th className="font-normal text-xs md:text-lg">{getItemTotalPrice(item)} $</th>
+                      <th className="font-normal text-xs md:text-lg">
                         <IconButton aria-label="delete" onClick={() => deletItem(item.id)}><DeleteIcon /></IconButton></th>
                     </tr>
                   );
