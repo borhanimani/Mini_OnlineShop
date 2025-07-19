@@ -59,7 +59,7 @@ export default function CartList() {
               }
             </tbody>
           </table>
-          <div className="flex flex-row justify-between items-center px-15 py-7 font-bold text-2xl border-1 w-full bg-stone-500 text-stone-100 sticky top-0 bottom-0">
+          <div className="sticky bottom-0 flex flex-row justify-between items-center px-15 py-7 font-bold text-2xl border-1 w-full bg-stone-500 text-stone-100 ">
             <div >Total Price:</div>
             <div >{getTotalPrice(list)} $</div>
           </div>
