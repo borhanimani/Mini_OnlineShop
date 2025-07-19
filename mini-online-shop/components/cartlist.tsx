@@ -7,15 +7,13 @@ import Button from '@mui/material/Button';
 import { useCartStore } from "@/store/useCartStore";
 import { getItemTotalPrice, getTotalPrice } from "@/utils/cart-functions";
 import { CartItemArray } from "@/utils/project-types";
-import { useEffect } from "react";
-
 
 export default function CartList() {
   const list: CartItemArray = useCartStore((state) => state.list);
   const deletItem = useCartStore((state) => state.deleteItem);
   const increaseItem = useCartStore((state) => state.increaseItem);
   const decreaseItem = useCartStore((state) => state.decreaseItem);
-  
+
   return (
     <>
       {list.length == 0 ? (
@@ -24,8 +22,8 @@ export default function CartList() {
         md:text-2xl
         lg:text-3xl'>No product added yet.</p>
       ) : (
-        <section className="border-3 flex flex-col justify-between w-full h-7/8 mt-20">
-          <table className="w-full mt-12 border-1">
+        <section className="flex flex-col justify-between w-full h-screen mt-20">
+          <table className="w-full mt-12 border-b-1 border-stone-400">
             <thead className="sticky top-24 z-10 h-full text-stone-100 bg-stone-500">
               <tr className=" border-1 h-20 bg-stone-500">
                 <th className="text-xs md:text-xl">Number</th>
