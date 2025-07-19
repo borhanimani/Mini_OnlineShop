@@ -26,7 +26,7 @@ export default function CartList() {
           <table className="w-full mt-12 border-b-1 border-stone-300">
             <thead className="sticky top-24 z-10 h-full text-stone-100 bg-stone-500">
               <tr className=" border-1 h-20 bg-stone-500">
-                <th className="text-xs md:text-xl">Number</th>
+                <th className="text-xs md:text-xl lg:text-xl">Number</th>
                 <th className="text-xs md:text-xl">Title</th>
                 <th className="text-xs md:text-xl">Description</th>
                 <th className="text-xs md:text-xl">Quantity</th>
