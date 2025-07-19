@@ -27,7 +27,7 @@ export default function ProductCard(props: Product) {
     <Card className='
       w-9/11 mt-10 mb-5 ml-9 h-105
       md:w-5/11 md:mx-3
-      xl:w-3/11 xl:mr-15 xl:ml-3 m-0'
+      xl:w-3/11 xl:mr-15 xl:ml-3'
       sx={{ boxShadow: '0 3px 6px rgba(0, 0, 0, 0.6)' }}>
       <CardMedia
         component="img"
