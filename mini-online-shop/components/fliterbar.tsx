@@ -7,7 +7,7 @@ export default function Filterbar({ list, onCategoryChange, onSearchChange }: Fi
     <section className="
     flex flex-col items-center w-full h-1/8 mt-30
     sm:mt-25
-    md:flex-row md:px-10 md:gap-5 md:mt-35 
+    md:flex-row md:px-10 md:gap-5 md:mt-35 md:ml-2 
     lg:mt-35
     xl:gap-17 xl:ml-13">
       <Search onSearchChange={onSearchChange} />

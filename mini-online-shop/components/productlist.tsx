@@ -7,8 +7,9 @@ export default function ProductList({ list }: Products) {
   return (
     <section className=" 
     flex flex-col justify-center flex-wrap
-    md:flex-row md:justify-start md:ml-5
-    lg:ml-10">
+    md:flex-row md:justify-start md:ml-10
+    lg:ml-10
+    xl:ml-20">
       {
         list.map(item => {
           return (
