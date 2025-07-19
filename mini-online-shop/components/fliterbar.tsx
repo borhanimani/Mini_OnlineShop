@@ -9,7 +9,7 @@ export default function Filterbar({ list, onCategoryChange, onSearchChange }: Fi
     sm:mt-25
     md:flex-row md:px-10 md:gap-5 md:mt-35 md:ml-2 
     lg:mt-35
-    xl:gap-15 xl:ml-20">
+    xl:gap-15 xl:ml-17">
       <Search onSearchChange={onSearchChange} />
       <CategoryFilter list={list} onCategoryChange={onCategoryChange} />
     </section>
