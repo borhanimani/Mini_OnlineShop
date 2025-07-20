@@ -26,7 +26,7 @@ export default function CategoryFilter({ list, onCategoryChange }: CategoryCompo
         label="Category"
       >
         <MenuItem value="">
-          <em>None</em>
+          All
         </MenuItem>
         {
           list.map(item => {
