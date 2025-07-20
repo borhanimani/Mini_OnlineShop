@@ -1,5 +1,5 @@
 export async function fetchProducts() {
-    const response = await fetch('https://fakestoreapi.com/products');
+    const response = await fetch('https://fakestoreapi.com/product');
 
     if (!response.ok) {
         throw new Error('Fetching Products Error');
