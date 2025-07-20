@@ -9,7 +9,7 @@ import { fetchProducts } from "@/libs/http-requests";
 import ProductLoading from "./productloading";
 import ProductError from "./producterror";
 
-export default function ProductSection({ list }: Products) {
+export default function ProductSection() {
   const [searchText, setSearchText] = useState('');
   const [category, setCategory] = useState('');
 
