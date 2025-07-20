@@ -47,6 +47,16 @@ export type CartStore = {
     deleteItem: (id: number) => void;
 }
 
+export type tanstackProviderProps = {
+    children: React.ReactNode;
+}
+
+export type UseQueryProduct = {
+    data: ProductArray | undefined;
+    isLoading: boolean;
+    isError: boolean;
+}
+
 export const productList: Product[] = [
     { id: 1, title: 'Footbal Ball', description: '6 mini size blue/red', price: 12.33, category: 'Sport', image: "" },
     { id: 4, title: 'Tennis', description: '6 mini size blue/red', price: 12.33, category: 'Sport', image: "" },
