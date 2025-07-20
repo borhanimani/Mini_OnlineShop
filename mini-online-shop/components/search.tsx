@@ -6,7 +6,7 @@ export default function Search({ onSearchChange }: SearchComponent) {
   const [textValue, setTextValue] = useState('');
 
   const setValue = (value: React.ChangeEvent<HTMLInputElement>): void => {
-    const newValue = value.target.value.toLowerCase();
+    const newValue = value.target.value;
     onSearchChange(newValue);
     setTextValue(newValue);
   }

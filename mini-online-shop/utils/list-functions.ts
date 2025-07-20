@@ -42,7 +42,7 @@ function filterListByCategory(list: ProductArray, category: string): ProductArra
 
 function filterListBySearchText(list: ProductArray, searchText: string) {
     const filteredList: ProductArray = list.filter(item => {
-        return item.title.toLowerCase().includes(searchText);
+        return item.title.toLowerCase().includes(searchText.toLowerCase());
     });
     return filteredList;
 }
