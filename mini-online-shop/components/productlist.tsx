@@ -10,20 +10,23 @@ export default function ProductList({ list }: Products) {
     md:flex-row md:justify-start md:ml-10
     lg:ml-10
     xl:ml-20">
+
       {
-        list.map(item => {
-          return (
-            <ProductCard
-              key={item.id}
-              id={item.id}
-              title={item.title}
-              description={item.description}
-              price={item.price}
-              category={item.category}
-              image={item.image}
-            />
-          )
-        })
+        list.length == 0 ? (<p className="w-full h-full flex flex-row justify-center">No item found</p>) : (
+          list.map(item => {
+            return (
+              <ProductCard
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                description={item.description}
+                price={item.price}
+                category={item.category}
+                image={item.image}
+              />
+            )
+          })
+        )
       }
     </section>
   );
