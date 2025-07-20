@@ -41,7 +41,7 @@ export default function CartList() {
                     <tr className={index % 2 == 0 ? "bg-white h-15 " : "bg-stone-300 h-15 "} key={item.id}>
                       <th className="font-normal text-xs md:text-lg">{index + 1}</th>
                       <th className="font-normal text-xs md:text-lg">{item.title}</th>
-                      <th className="font-normal text-xs md:text-lg">{item.description}</th>
+                      <th className="font-normal text-left text-xs md:text-lg max-w-xs ">{item.description}</th>
                       <th className="font-normal text-xs md:text-lg">
                         <Button onClick={() => decreaseItem(item.id)} variant="contained"
                           sx={{ borderRadius: '50%', fontSize: '20px', minWidth: 'unset', padding: '12px', marginRight: '8px', width: '20px', height: '20px', backgroundColor: 'rgba(185, 0, 0, 1)' }}>-</Button>
