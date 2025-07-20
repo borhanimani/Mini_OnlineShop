@@ -24,7 +24,7 @@ export default function UserIcon() {
         <div className='flex items-center gap-2 flex-row ml-4 lg:ml-10 '>
             <button onClick={openIt} className='flex gap-2'>
                 <AccountCircleOutlinedIcon className='text-stone-700' style={{ scale: 1.9 }} display={'block'} />
-                <p className='text-gray-700 font-bold ml-1'>Hi, {data ? data.name.firstname + "!" : ''}</p>
+                <p className='text-gray-700 font-bold ml-1'>{data ? "Hi, " + data.name.firstname + "!" : ''}</p>
             </button>
             <UserModal data={data ? data : { id: -1, name: { firstname: failedMessageItem, lastname: '' }, username: failedMessageItem, email: failedMessageItem, password: failedMessageItem }} open={isOpen} setOpen={closeIt} />
         </div>
