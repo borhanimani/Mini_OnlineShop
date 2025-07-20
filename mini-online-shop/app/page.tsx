@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <ProductSection list={productList}/>
+      <ProductSection list={productList} />
     </>
   );
 }
