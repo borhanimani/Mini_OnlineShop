@@ -16,6 +16,14 @@ export type CartItem = {
     quantity: number;
 }
 
+export type User = {
+    id: number;
+    name: { firstname: string, lastname: string };
+    username: string;
+    email: string;
+    password: string;
+}
+
 export type Products = {
     list: Product[];
 }
@@ -27,6 +35,12 @@ export type CategoryComponent = {
 
 export type SearchComponent = {
     onSearchChange: (value: string) => void;
+}
+
+export type UserModalComponent = {
+    data: User;
+    open: boolean;
+    setOpen: () => void;
 }
 
 export type Filters = {
@@ -53,6 +67,12 @@ export type tanstackProviderProps = {
 
 export type UseQueryProduct = {
     data: ProductArray | undefined;
+    isLoading: boolean;
+    isError: boolean;
+}
+
+export type UseQueryUser = {
+    data: User | undefined;
     isLoading: boolean;
     isError: boolean;
 }
