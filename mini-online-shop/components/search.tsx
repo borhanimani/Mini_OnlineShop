@@ -6,11 +6,11 @@ export default function Search({ onSearchChange }: SearchComponent) {
   const [textValue, setTextValue] = useState('');
 
   const setValue = (value: React.ChangeEvent<HTMLInputElement>): void => {
-    const newValue = value.target.value;
+    const newValue = value.target.value.toLowerCase();
     onSearchChange(newValue);
     setTextValue(newValue);
   }
-
+  
   return (
     <div className='
     flex flex-row items-center h-10 w-9/10 relative
