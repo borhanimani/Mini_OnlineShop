@@ -4,7 +4,7 @@ ________________________________________________________________________________
 **Setup Instructions:**  
   1. Clone the project:
        git clone https://github.com/borhanimani/Mini_OnlineShop.git  
-       *you download the project zip and extract it*
+       *you download the project zip*
      
   3. Go to the project file:
        cd mini-online-shop .
