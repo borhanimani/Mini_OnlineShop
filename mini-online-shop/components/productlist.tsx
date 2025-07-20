@@ -6,24 +6,25 @@ import { Products } from "@/utils/project-types";
 export default function ProductList({ list }: Products) {
   return (
     <section className=" 
-    flex flex-col justify-center flex-wrap w-14/15
-    md:flex-row md:justify-start md:ml-10
-    lg:ml-10
-    xl:ml-20">
+    flex flex-col justify-center flex-wrap w-14/15 mx-auto
+    md:flex-row md:justify-start md:mx-auto">
+
       {
-        list.map(item => {
-          return (
-            <ProductCard
-              key={item.id}
-              id={item.id}
-              title={item.title}
-              description={item.description}
-              price={item.price}
-              category={item.category}
-              image={item.image}
-            />
-          )
-        })
+        list.length == 0 ? (<p className="w-full h-full flex flex-row justify-center">No item found</p>) : (
+          list.map(item => {
+            return (
+              <ProductCard
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                description={item.description}
+                price={item.price}
+                category={item.category}
+                image={item.image}
+              />
+            )
+          })
+        )
       }
     </section>
   );
