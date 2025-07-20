@@ -34,12 +34,18 @@ export default function UserModal({ data, open, setOpen }: UserModalComponent) {
 					User
 				</Typography>
 				<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-					<p>{`Username: ${data.username}`}</p><br />
-					<p>{`Email: ${data.email}`}</p><br />
-					<p>{`Name: ${data.name.firstname + " " + data.name.lastname}`}</p><br />
-					<p>{`Password: ${data.password}`}</p><br />
+					{`Username: ${data.username}`}
+				</Typography>
+				<Typography id="modal-modal-description" sx={{ mt: 2 }}>
+					{`Name: ${data.name.firstname + " " + data.name.lastname}`}
+				</Typography>
+				<Typography id="modal-modal-description" sx={{ mt: 2 }}>
+					{`Email: ${data.email}`}
+				</Typography>
+				<Typography id="modal-modal-description" sx={{ mt: 2 }}>
+					{`Password: ${data.password}`}
 				</Typography>
 			</Box>
-		</Modal>
+		</Modal >
 	);
 }
