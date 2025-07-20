@@ -34,11 +34,11 @@ export default function ProductCard(props: Product) {
         alt={props.title}
         image={props.image}
         className='h-2/5 bg-white'
-        sx={{objectFit: 'contain'}}
+        sx={{ objectFit: 'contain', padding: 2 }}
       />
       <div className='h-3/5 flex flex-col justify-between'>
         <CardContent>
-          <Typography gutterBottom sx={{ color: "rgba(91, 91, 91, 1)", fontWeight: 'bold', marginBottom:3 }} variant="subtitle1" component="div">
+          <Typography gutterBottom sx={{ color: "rgba(91, 91, 91, 1)", fontWeight: 'bold', marginBottom: 3 }} variant="subtitle1" component="div">
             {props.title}
           </Typography>
           <Typography variant="body2" sx={{
