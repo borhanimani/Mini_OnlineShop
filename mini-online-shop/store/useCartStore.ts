@@ -14,9 +14,7 @@ export const useCartStore = create<CartStore>((set) => ({
             targetProduct.quantity++;
         }
 
-        return {
-            list: newList
-        };
+        return { list: newList };
     }),
 
     deleteItem: (id: number) => set((state) => ({
@@ -32,9 +30,7 @@ export const useCartStore = create<CartStore>((set) => ({
         }
 
         targetProduct.quantity++;
-        return {
-            list: newList
-        };
+        return { list: newList };
     }),
 
     decreaseItem: (id: number) => set((state) => {
