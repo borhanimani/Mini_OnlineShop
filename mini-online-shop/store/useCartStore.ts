@@ -44,14 +44,16 @@ export const useCartStore = create<CartStore>((set) => ({
         const item: CartItem | undefined = state.list.find((theItem) => theItem.id == id);
 
         if (item) {
-            if (item.quantity > 0) {
+            if (item.quantity > 1) {
                 return {
                     list: state.list.map((item) =>
                         item.id == id ? { ...item, quantity: item.quantity - 1 } : item
                     )
                 }
             } else {
-                return state;
+                return {
+                    list: state.list.filter(item => item.id !== id)
+                };
             }
         } else {
             return state;

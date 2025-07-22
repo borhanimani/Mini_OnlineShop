@@ -11,3 +11,11 @@ export function getTotalPrice(list: CartItemArray): String {
 export function getItemTotalPrice(item: CartItem): String {
     return (item.price * item.quantity).toFixed(2);
 }
+
+export function getAllProductsCount(list: CartItemArray): number {
+    let count = 0;
+    list.forEach(item => {
+        count += item.quantity;
+    })
+    return count
+}
