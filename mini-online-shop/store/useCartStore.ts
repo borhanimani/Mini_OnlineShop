@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { CartItem, CartStore } from "@/utils/project-types";
+import { CartItem, CartItemArray, CartStore } from "@/utils/project-types";
 
 export const useCartStore = create<CartStore>((set) => ({
     list: [],
@@ -23,21 +23,17 @@ export const useCartStore = create<CartStore>((set) => ({
     })),
 
     increaseItem: (id: number) => set((state) => {
-        const item: CartItem | undefined = state.list.find((theItem) => theItem.id == id);
+        const newList: CartItemArray = [...state.list];
+        const targetProduct: CartItem | undefined = newList.find((product) => product.id === id);
 
-        if (item) {
-            if (item.quantity < 10) {
-                return {
-                    list: state.list.map((item) =>
-                        item.id == id ? { ...item, quantity: item.quantity + 1 } : item
-                    )
-                }
-            } else {
-                return state;
-            }
-        } else {
+        if (!targetProduct) {
             return state;
         }
+
+        targetProduct.quantity++;
+        return {
+            list: newList
+        };
     }),
 
     decreaseItem: (id: number) => set((state) => {
