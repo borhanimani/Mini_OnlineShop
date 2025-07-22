@@ -31,7 +31,7 @@ export default function CartList() {
                   <th className="text-xl"><div className='w-50'>Title</div></th>
                   <th className="text-xl"><div className='w-50'>Description</div></th>
                   <th className="text-xl"><div className='w-40'>Quantity</div></th>
-                  <th className="text-xl "><div className='w-40'>Price</div></th>
+                  <th className="text-xl "><div className='w-30'>Price</div></th>
                   <th className="text-xl" colSpan={2}><div className='w-40'>Total Price</div></th>
                 </tr>
               </thead>
