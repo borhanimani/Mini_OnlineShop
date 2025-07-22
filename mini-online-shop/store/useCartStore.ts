@@ -5,17 +5,18 @@ export const useCartStore = create<CartStore>((set) => ({
     list: [],
 
     addItem: (item: CartItem) => set((state) => {
-        if (state.list.some(theItem => theItem.id == item.id)) {
-            return {
-                list: state.list.map(theItem =>
-                    theItem.id == item.id ? { ...theItem, quantity: theItem.quantity + 1 } : theItem
-                )
-            };
+        const newList = [...state.list];
+        const targetList = newList.find((product) => product.id === item.id);
+
+        if (!targetList) {
+            newList.push(item);
         } else {
-            return {
-                list: [...state.list, item]
-            };
+            targetList.quantity++;
         }
+
+        return {
+            list: newList
+        };
     }),
 
     deleteItem: (id: number) => set((state) => ({
