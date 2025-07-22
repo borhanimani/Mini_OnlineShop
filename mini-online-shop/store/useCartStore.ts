@@ -5,13 +5,13 @@ export const useCartStore = create<CartStore>((set) => ({
     list: [],
 
     addItem: (item: CartItem) => set((state) => {
-        const newList = [...state.list];
-        const targetList = newList.find((product) => product.id === item.id);
+        const newList: CartItemArray = [...state.list];
+        const targetProduct: CartItem | undefined = newList.find((product) => product.id === item.id);
 
-        if (!targetList) {
+        if (!targetProduct) {
             newList.push(item);
         } else {
-            targetList.quantity++;
+            targetProduct.quantity++;
         }
 
         return {
@@ -38,22 +38,18 @@ export const useCartStore = create<CartStore>((set) => ({
     }),
 
     decreaseItem: (id: number) => set((state) => {
-        const item: CartItem | undefined = state.list.find((theItem) => theItem.id == id);
+        const newList: CartItemArray = [...state.list];
+        const targetProduct: CartItem | undefined = newList.find(product => product.id === id)
 
-        if (item) {
-            if (item.quantity > 1) {
-                return {
-                    list: state.list.map((item) =>
-                        item.id == id ? { ...item, quantity: item.quantity - 1 } : item
-                    )
-                }
-            } else {
-                return {
-                    list: state.list.filter(item => item.id !== id)
-                };
-            }
+        if (!targetProduct) {
+            return state
+        }
+
+        if (targetProduct.quantity > 1) {
+            targetProduct.quantity--;
+            return { list: newList }
         } else {
-            return state;
+            return { list: newList.filter(product => product.id !== id) };
         }
     }),
 }))
