@@ -8,6 +8,6 @@ export function getTotalPrice(list: CartItemArray): String {
     return totalPrice.toFixed(2);
 }
 
-export function getItemTotalPrice(item: CartItem): number {
-    return (item.price * item.quantity);
+export function getItemTotalPrice(item: CartItem): String {
+    return (item.price * item.quantity).toFixed(2);
 }
